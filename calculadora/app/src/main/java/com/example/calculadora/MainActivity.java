@@ -104,30 +104,35 @@ public class MainActivity extends AppCompatActivity {
     public void igual(View view) {
 
         Double valor1, valor2, total;
+        String tipoSigno = signoOperacion.getText().toString();
+        switch (tipoSigno){
 
-
-        if (signoOperacion.getText().equals("+")) {
-            valor1 = Double.parseDouble(resultado2.getText().toString());
-            valor2 = Double.parseDouble(resultado.getText().toString());
-            total = valor1 + valor2;
-            resultado.setText(total.toString());
-        } else if (signoOperacion.getText().equals("-")) {
-            valor1 = Double.parseDouble(resultado2.getText().toString());
-            valor2 = Double.parseDouble(resultado.getText().toString());
-            total = valor1 - valor2;
-            resultado.setText(total.toString());
-        } else if (signoOperacion.getText().equals("x")) {
-            valor1 = Double.parseDouble(resultado2.getText().toString());
-            valor2 = Double.parseDouble(resultado.getText().toString());
-            total = valor1 * valor2;
-            resultado.setText(total.toString());
-        } else if (signoOperacion.getText().equals("÷")) {
-            valor1 = Double.parseDouble(resultado2.getText().toString());
-            valor2 = Double.parseDouble(resultado.getText().toString());
-            total = valor1 / valor2;
-            resultado.setText(total.toString());
-        } else if (signoOperacion.getText().length() == 0) {
-
+            case "+":
+                valor1 = Double.parseDouble(resultado2.getText().toString());
+                valor2 = Double.parseDouble(resultado.getText().toString());
+                total = valor1 + valor2;
+                resultado.setText(total.toString());
+                break;
+            case  "-":
+                valor1 = Double.parseDouble(resultado2.getText().toString());
+                valor2 = Double.parseDouble(resultado.getText().toString());
+                total = valor1 - valor2;
+                resultado.setText(total.toString());
+                break;
+            case "x":
+                valor1 = Double.parseDouble(resultado2.getText().toString());
+                valor2 = Double.parseDouble(resultado.getText().toString());
+                total = valor1 * valor2;
+                resultado.setText(total.toString());
+                break;
+            case "÷":
+                valor1 = Double.parseDouble(resultado2.getText().toString());
+                valor2 = Double.parseDouble(resultado.getText().toString());
+                total = valor1 / valor2;
+                resultado.setText(total.toString());
+                break;
+            default:
+                break;
         }
 
         resultado2.setText("");
